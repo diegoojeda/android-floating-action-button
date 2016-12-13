@@ -499,8 +499,22 @@ public class FloatingActionsMenu extends ViewGroup {
         }
     }
 
-    public AddFloatingActionButton getAddButton() {
-        return mAddButton;
+    public void setPlusColor(int color){
+        mAddButtonPlusColor = color;
+        removeView(mAddButton);
+        createAddButton(getContext());
+    }
+
+    public void setNormalColor(int color){
+        mAddButtonColorNormal = color;
+        removeView(mAddButton);
+        createAddButton(getContext());
+    }
+
+    public void setPressedColor(int color) {
+        mAddButtonColorPressed = color;
+        removeView(mAddButton);
+        createAddButton(getContext());
     }
 
     public interface OnFloatingActionsMenuUpdateListener {
